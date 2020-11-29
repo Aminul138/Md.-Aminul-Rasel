@@ -1,31 +1,34 @@
-
-
 <?php
 $homepage = file_get_contents('user_info.txt', true);
 echo ("Your Previus Balance is :- ");
 echo $homepage ;
 if(isset($_POST['submit']))  
 {  
-$oldb = $_POST['deposit'];
+$number1 = $_POST['deposit'];
+$number2 = $homepage;
+$sum =  $number1+$number2;  
 
-extract($_POST);
-if(isset($save))
+        echo "Your new Balance Is ".$sum;  	
+
+}
+if(isset($_POST['submit2']))  
+{  
+$oldb = $_POST['withdraw'];
+$number3 = $homepage;
+if($oldb<$number3)
 {
-	switch($choice)
-	{
-		case '1':
-        $res=$oldb+$homepage;
-        echo $res;
-		break;
-		
+    $total =  $oldb-$number3;  
 
-		
+        echo "Your new Balance Is ".$total;
+}
+else{
+    echo " Do not have Money";
+}
+}
 
-		
-	}
 	
-}
-}
+
+
 
 ?>
 	<form method="post">
@@ -35,28 +38,20 @@ if(isset($save))
 <td>You want to add Some Money :</td>
 <td> <input type="number" name="deposit" placeholder="Please Enter Your Amount"> </td>
 </tr>
-
+<tr>
+                    <td>
+                        <input type="submit" name=" submit" value="submit">
+                    </td>
+                </tr>
 <tr>
 <td>you want to withdrow some money :</td>
 <td> <input type="text" name="withdraw" placeholder="Please Enter Your Amount"> </td>
+
 </tr>
-<p>If you want to deposit please select 1</p><br>
-<p>If you want to withdraw please select 2</p><br>
 <tr>
-				<th>Select Your Choice</th>
-				<th>
-				<select name="choice">
-					<option>1</option>
-					<option>2</option>
-				</select>
-				</th>
-			</tr>
-			<tr>
-            <tr>
-				
-				<th colspan="2">
-				<input type="submit" 
-				name="save" value="Show Result">
-				</th>
-			</tr>
+                    <td>
+                        <input type="submit" name=" submit2" value="submit">
+                    </td>
+                </tr>
+<tr>
 </table>
