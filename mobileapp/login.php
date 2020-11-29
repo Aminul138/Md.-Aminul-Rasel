@@ -1,8 +1,4 @@
-<?php
 
-include 'login_action.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +7,15 @@ include 'login_action.php';
 </head>
 <body>
     <center>
-        <form action="" method="post">
+        <form  method="post" action="connection.php">
             <table>
                 <tr>
                     <td>Username :</td>
-                    <td> <input type="text" name="username" placeholder="Please Enter Your UserName"> </td>
+                    <td> <input type="text" name="username" placeholder="Please Enter Your UserName" required> </td>
                 </tr>
                 <tr>
                 <td>Password :</td>
-                    <td> <input type="text" name="password" placeholder="Please Enter Your PassWord"> </td>
+                    <td> <input type="text" name="password" placeholder="Please Enter Your PassWord" required > </td>
                 </tr>
                 <tr>
                     <td>
