@@ -15,7 +15,7 @@ $query = "INSERT INTO FASTCODE (username, password, gender, email, birth) VALUES
 $data = mysqli_query($conn, $query);
 
 if($conn->query($query) === TRUE){
-    header("Location: new.php");
+    header("Location: display.php");
 }
 else{
     echo "Error: " . $query . "<br>" . $conn->error;
