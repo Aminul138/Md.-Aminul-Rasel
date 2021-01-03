@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +15,8 @@
     <th>Gender :</th>
     <th>E-mail:</th>
     <th>Date Of Birth :</th>
-    <th>Action</th>
+    <th>Delete</th>
+    <th>Update</th>
     </tr>
     </thead>
     <tbody>
@@ -40,7 +39,9 @@ while($res = mysqli_fetch_array($query)){
 <td> <?php  echo $res['gender']; ?> </td>
 <td> <?php  echo $res['email']; ?> </td>
 <td> <?php  echo $res['birth']; ?> </td>
-<td> <a href="#">Delect</a> </td>
+<td> <a href='delete.php?id=$result[id]'>Delect</a> </td>
+<td> <a href='update.php?id=$result[id]& username = $result[username]
+&email=$result[result]'>Edit</a> </td>
 
 
 
